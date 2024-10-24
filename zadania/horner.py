@@ -3,7 +3,6 @@ import numpy as np
 import plotly.graph_objs as go
 # x^5 - 3x^4 -23x^3 + 51x^2 + 94x - 120
 
-
 def load_coefficients():
     """ 
     returns arrays of coefficients
@@ -12,7 +11,6 @@ def load_coefficients():
     n = 0
     print('to exit press x')
     while True:
-        
         coef = input(f'give the coefficient at  x^{n}: ')
         try:
             coef = int(coef)
@@ -29,7 +27,6 @@ def create_polynominal(coefs):
     """
     returns a polynomial formula
     """
-
     str_expresion = ''
     for n in range(len(coefs)):
         str_expresion += f'{str(coefs[n])}*x**{len(coefs)-n-1}'
@@ -131,11 +128,8 @@ def main():
 
     copleted_product = convert_list_into_product(poly_fac)
     copleted_product = copleted_product.replace('+(-','-').replace('+(', '+'). replace('))', ')')
-
-    
     print(f'wielomian{poly} ma miejsca zerowe w punktach: {sqrt_set}')
     print(f'wielomian po podzieleniu przez pierwiastki: {copleted_product}')
-
 
     if len(sqrt_set) == 1:
         x_values = np.linspace(int(min(sqrt_set))-10, int(max(sqrt_set)+10), 200)
