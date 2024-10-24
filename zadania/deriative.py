@@ -6,7 +6,6 @@ import plotly.graph_objs as go
 # x3-6x2+9x
 # x4-4x4+4x2
 
-
 def load_coefficients():
     """ 
     returns arrays of coefficients
@@ -28,12 +27,10 @@ def load_coefficients():
         n += 1
     return coefs
 
-
 def create_polynominal(coefs: list):
     """
     returns a polynomial formula
     """
-
     str_expresion = ''
     for n in range(len(coefs)):
         str_expresion += f'{str(coefs[n])}*x**{len(coefs)-n-1}'
@@ -90,7 +87,6 @@ def sort_set(sqrt_set):
     sqrt_sorted_tab = sorted(sqrt_set)  # Zamienia zbiór na listę i sortuje
     return sqrt_sorted_tab
 
-
 def find_sqrt(poly, p_set, q_set):
     """
     looks for the root of a polynomial
@@ -108,9 +104,6 @@ def find_sqrt(poly, p_set, q_set):
     sqrt_sorted_tab = sort_set(sqrt_set)
     return sqrt_sorted_tab
 
-
-
-
 def ff(deri_poly, number):
     x = sp.symbols('x')
     result = deri_poly.subs(x, number)
@@ -118,8 +111,6 @@ def ff(deri_poly, number):
         return '+'
     else:
         return '-'
-
-
 
 def calculate_the_monotonicity_of_the_function(sqrt_tab_with_zeros, deri_poly): # s_t_w_z = sqrt_tab_with_zeros
     tab = sqrt_tab_with_zeros
@@ -146,7 +137,6 @@ def calculate_the_monotonicity_of_the_function(sqrt_tab_with_zeros, deri_poly): 
         tab.append(sign)
 
     return tab
-
 
 def table_with_local_min_and_max(tab):
     min_tab = []
@@ -188,7 +178,6 @@ def f_x(x_values, poly):
     """
     x = sp.symbols('x')
     return [float(poly.subs(x, val)) for val in x_values]
-
 
 def main():
     coefs = load_coefficients()
@@ -281,7 +270,7 @@ def main():
         ))
 
     fig.update_layout(
-        title=f"f(x)={deri_poly}",
+        title=f"polynomial f(x)={poly}<br>derivative f'(x)={deri_poly}",
         xaxis_title="x",
         yaxis_title="f(x)"
     )
