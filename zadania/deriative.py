@@ -225,7 +225,7 @@ def main():
         y_values = f_x(x_values, deri_poly)
     elif len(deri_sqrt_sorted_tab) > 1:
         x_values = np.linspace(int(min(deri_sqrt_sorted_tab)) - 10, int(max(deri_sqrt_sorted_tab) + 10), 
-                            int(10 * (max(deri_sqrt_sorted_tab) + 10 - (min(deri_sqrt_sorted_tab) - 10 + 10))))
+        int(10 * (max(deri_sqrt_sorted_tab) + 10 - (min(deri_sqrt_sorted_tab) - 10 + 10))))
         y_values = f_x(x_values, deri_poly)
     else:
         x_values = np.linspace(-10, 10, 100)
